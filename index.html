@@ -5,28 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="google" content="notranslate" />
   <meta http-equiv="Content-Language" content="en_US" />
-  <script src="/assets/jquery.js"></script>
+  <script src="assets/jquery.js"></script>
   
   <title>Home</title>
   <meta content="authenticity_token" name="csrf-param" />
 </head>
 <script>
-  window.goodConnection = true;
+  window.goodConnection = false;
   window.onload = function(){
+    setTimeout(function(){ 
+        if(!window.googConnection){
+          alert("Could not connect, pleaset try later");
+        }
+      },5000 );
     $.ajax({
       type: 'GET',
       dataType: "script",
-      url: "http://qa.systemromeo.com/launch_mobile_app",
+      url: "http://qa.systemromeo/launch_mobile_app",
       headers: {
         "X-Requested-With": "XMLHttpRequest"
       },
-      error:{
+      error: function() {
         window.goodConnection = false;
         return false;
       }
     }).fail(function (jqxhr, settings, exception) {
         window.goodConnection = false;
-        alert('Server could not be reached. Please check your internet connection.');
     });
   }
 </script>
