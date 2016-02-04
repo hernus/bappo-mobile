@@ -1,0 +1,30 @@
+
+body{
+   font-family:helvetica;
+   margin:0;
+   padding:0;
+}
+.loading, .notloading{
+   position:absolute;
+   top:50%;
+   width:100%;
+   margin-top:-120px;
+   font-size:24pt; 
+   text-align:center;
+   overflow:hidden;
+}
+
+.message, .errormessage{
+   line-height:50px;
+   color:#ccc;
+}
+.button{
+   margin-top:10px;
+   line-height:50px;
+   color: white;
+   background-color:orange;
+   cursor:pointer;
+}
+.button:hover{
+   opacity:0.8;
+}

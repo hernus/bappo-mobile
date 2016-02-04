@@ -6,6 +6,7 @@
   <meta name="google" content="notranslate" />
   <meta http-equiv="Content-Language" content="en_US" />
   <script src="assets/jquery.js"></script>
+  <link   rel="stylesheet" media="all" href="assets/app.css" />
   
   <title>Home</title>
   <meta content="authenticity_token" name="csrf-param" />
@@ -13,30 +14,48 @@
 <script>
   window.goodConnection = false;
   window.onload = function(){
-    setTimeout(function(){ 
-        if(!window.googConnection){
-          alert("Could not connect, pleaset try later");
+    window.launchMobileApp = function(){
+      $(".notloading").hide();
+      $(".loading").fadeIn();
+      setTimeout(function(){ 
+          if(!window.googConnection){
+            $(".loading").hide();
+            $(".notloading").fadeIn();
+          }
+        },5000 );
+      $.ajax({
+        type: 'GET',
+        dataType: "script",
+        url: "http://qa.systemromeo.com/launch_mobile_app",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        error: function() {
+          window.goodConnection = false;
+          return false;
         }
-      },5000 );
-    $.ajax({
-      type: 'GET',
-      dataType: "script",
-      url: "http://qa.systemromeo.com/launch_mobile_app",
-      headers: {
-        "X-Requested-With": "XMLHttpRequest"
-      },
-      error: function() {
-        window.goodConnection = false;
-        return false;
-      }
-    }).fail(function (jqxhr, settings, exception) {
-        window.goodConnection = false;
-    });
+      }).fail(function (jqxhr, settings, exception) {
+          window.goodConnection = false;
+      });      
+    }
+    launchMobileApp();
   }
 </script>
 
-<body style="font-size:24pt; color:#ddd; padding-top:100px; text-align:center">
-      Loading
+<body>
+  <div class='loading'>
+      <div class="message">
+        Loading
+      </div>  
+  </div>
+  <div class=notloading style="display:none">
+      <div class="errormessage">
+          Oops, we could not connect.
+      </div>  
+      <div class="button" onclick="launchMobileApp()">
+          Try again
+      </div>  
+  </div>
 </body>
 
 </html>
