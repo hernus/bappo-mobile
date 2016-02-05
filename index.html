@@ -14,31 +14,31 @@
 <script>
   window.goodConnection = false;
   window.onload = function(){
-    window.launchMobileApp = function(){
-      $(".notloading").hide();
-      $(".loading").fadeIn();
-      setTimeout(function(){ 
-          if(!window.googConnection){
-            $(".loading").hide();
-            $(".notloading").fadeIn();
-          }
-        },5000 );
-      $.ajax({
-        type: 'GET',
-        dataType: "script",
-        url: "http://qa.systemromeo.com/launch_mobile_app",
-        headers: {
-          "X-Requested-With": "XMLHttpRequest"
-        },
-        error: function() {
-          window.goodConnection = false;
-          return false;
-        }
-      }).fail(function (jqxhr, settings, exception) {
-          window.goodConnection = false;
-      });      
-    }
-    launchMobileApp();
+    // window.launchMobileApp = function(){
+    //   $(".notloading").hide();
+    //   $(".loading").fadeIn();
+    //   setTimeout(function(){ 
+    //       if(!window.googConnection){
+    //         $(".loading").hide();
+    //         $(".notloading").fadeIn();
+    //       }
+    //     },5000 );
+    //   $.ajax({
+    //     type: 'GET',
+    //     dataType: "script",
+    //     url: "http://qa.systemromeo.com/launch_mobile_app",
+    //     headers: {
+    //       "X-Requested-With": "XMLHttpRequest"
+    //     },
+    //     error: function() {
+    //       window.goodConnection = false;
+    //       return false;
+    //     }
+    //   }).fail(function (jqxhr, settings, exception) {
+    //       window.goodConnection = false;
+    //   });      
+    // }
+    // launchMobileApp();
   }
 </script>
 
