@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
-        version   = "1.0.2">
+        version   = "1.0.3">
 
     <name>Bappo2</name>
 
@@ -40,17 +40,10 @@
     <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
     <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*"/>
-    <allow-navigation href="http://qa.systemromeo.com" />
-    <allow-navigation href="http://qa.systemromeo.com/*" />
+    <allow-navigation href="http://*/*" />
     <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <allow-intent href="http://qa.systemromeo.com" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
