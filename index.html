@@ -15,7 +15,7 @@
   window.goodConnection = false;
   window.onload = function(){
     window.launchMobileApp = function(){
-      $(".notloading").hide();
+      $(".notloading").fadeIn();
       $(".loading").fadeIn();
       setTimeout(function(){ 
           if(!window.googConnection){
@@ -38,8 +38,13 @@
           window.goodConnection = false;
       });      
     }
-    launchMobileApp();
+    // launchMobileApp();
   }
+  
+  window.openbappo = function() {
+    window.open("http://qa.systemromeo.com","_self");    
+  }
+
 </script>
 
 <body>
@@ -54,6 +59,9 @@
       </div>  
       <div class="button" onclick="launchMobileApp()">
           Try again
+      </div>  
+      <div class="button" onclick="openbappo()">
+          Open Direct
       </div>  
   </div>
 </body>
