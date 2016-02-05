@@ -15,7 +15,7 @@
   window.goodConnection = false;
   window.onload = function(){
     window.launchMobileApp = function(){
-      $(".notloading").fadeIn();
+      $(".notloading").hide();
       $(".loading").fadeIn();
       setTimeout(function(){ 
           if(!window.googConnection){
@@ -44,6 +44,9 @@
   window.openbappo = function() {
     window.open("http://qa.systemromeo.com","_self");    
   }
+
+            $(".loading").hide();
+            $(".notloading").show();
 
 </script>
 
