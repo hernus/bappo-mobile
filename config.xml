@@ -17,6 +17,7 @@
     </author>
 
     <gap:platform name="ios" />
+    <gap:platform name="android" />
 
     <preference name="permissions"                value="none"/>
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
